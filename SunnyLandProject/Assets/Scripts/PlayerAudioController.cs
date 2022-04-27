@@ -9,12 +9,14 @@ public class PlayerAudioController : MonoBehaviour
     // make sure to keep track of the movement as well !
 
     Rigidbody2D rb; // note the "2D" prefix 
+    AudioSource Run;
     
     // Start is called before the first frame update
     void Start()
     {
 	rb = GetComponent<Rigidbody2D>();
-	// get the references to your audio sources here !        
+	// get the references to your audio sources here !  
+    Run = GetComponent<AudioSource>();      
     }
 
     // FixedUpdate is called whenever the physics engine updates
@@ -24,7 +26,14 @@ public class PlayerAudioController : MonoBehaviour
 	// moving, and play the respective sound !
 	// Make sure to trigger the movement sound only when
 	// the movement begins ...
-
+       Debug.Log(rb.velocity.magnitude);
+        if (rb.velocity.magnitude >= 1) {
+            Debug.Log("The Object is Moving");
+            Run.Play();
+        } else if (rb.velocity.magnitude < 1) {
+            Debug.Log("The Object is not Moving");
+            Run.Stop();
+        }
 	// Use a magnitude threshold of 1 to detect whether the
 	// fox is moving or not !
 	// i.e.
