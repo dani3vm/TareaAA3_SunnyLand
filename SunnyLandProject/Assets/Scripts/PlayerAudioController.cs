@@ -6,10 +6,13 @@ public class PlayerAudioController : MonoBehaviour
 {
     // keep track of the jumping state ... 
     bool isJumping = false;
+    bool isRunning = false;
+    bool isPlaying = false;
     // make sure to keep track of the movement as well !
 
     Rigidbody2D rb; // note the "2D" prefix 
     AudioSource Run;
+
     
     // Start is called before the first frame update
     void Start()
@@ -26,12 +29,18 @@ public class PlayerAudioController : MonoBehaviour
 	// moving, and play the respective sound !
 	// Make sure to trigger the movement sound only when
 	// the movement begins ...
+      
        Debug.Log(rb.velocity.magnitude);
-        if (rb.velocity.magnitude >= 1) {
-            Debug.Log("The Object is Moving");
+        if (isRunning == false && rb.velocity.magnitude > 1 && !isJumping) {
+            print("The Object is Moving");
             Run.Play();
-        } else if (rb.velocity.magnitude < 1) {
-            Debug.Log("The Object is not Moving");
+            isRunning = true;
+        } else if (isRunning == true && rb.velocity.magnitude < 1) {
+            print("The Object is not Moving");
+            Run.Stop();
+            isRunning = false;
+        }
+        if (isJumping == true) {
             Run.Stop();
         }
 	// Use a magnitude threshold of 1 to detect whether the
