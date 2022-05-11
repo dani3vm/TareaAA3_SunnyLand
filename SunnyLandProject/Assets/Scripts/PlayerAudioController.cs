@@ -8,10 +8,11 @@ public class PlayerAudioController : MonoBehaviour
     bool isJumping = false;
     bool isRunning = false;
     bool isPlaying = false;
+
     // make sure to keep track of the movement as well !
 
     Rigidbody2D rb; // note the "2D" prefix 
-    AudioSource Run;
+    AudioSource[] sonidosZorro;
 
     
     // Start is called before the first frame update
@@ -19,7 +20,7 @@ public class PlayerAudioController : MonoBehaviour
     {
 	rb = GetComponent<Rigidbody2D>();
 	// get the references to your audio sources here !  
-    Run = GetComponent<AudioSource>();      
+    sonidosZorro = GetComponents<AudioSource>();      
     }
 
     // FixedUpdate is called whenever the physics engine updates
@@ -33,15 +34,15 @@ public class PlayerAudioController : MonoBehaviour
        Debug.Log(rb.velocity.magnitude);
         if (isRunning == false && rb.velocity.magnitude > 1 && !isJumping) {
             print("The Object is Moving");
-            Run.Play();
+            sonidosZorro[0].Play();
             isRunning = true;
         } else if (isRunning == true && rb.velocity.magnitude < 1) {
             print("The Object is not Moving");
-            Run.Stop();
+            sonidosZorro[0].Stop();
             isRunning = false;
         }
         if (isJumping == true) {
-            Run.Stop();
+           sonidosZorro[0].Stop();
         }
 	// Use a magnitude threshold of 1 to detect whether the
 	// fox is moving or not !
@@ -57,6 +58,7 @@ public class PlayerAudioController : MonoBehaviour
     public void OnLanding() {
         isJumping = false;
         print("the fox has landed");
+        sonidosZorro[2].Play();
 	// to keep things cleaner, you might want to
 	// play this sound only when the fox actually jumoed ...
     }
@@ -64,16 +66,23 @@ public class PlayerAudioController : MonoBehaviour
     // trigger your crouching sound here
     public void OnCrouching() {
         print("the fox is crouching");
+        if (isJumping == false) {
+            sonidosZorro[3].Play();
+        }
+        
     }
  
     // trigger your jumping sound here !
     public void OnJump() {
         isJumping = true;
         print("the fox has jumped");
+        Random.Range 
+        sonidosZorro[1].Play();
     }
 
     // trigger your cherry collection sound here !
     public void OnCherryCollect() {
         print("the fox has collected a cherry");
+        sonidosZorro[4].Play();
     }
 }
