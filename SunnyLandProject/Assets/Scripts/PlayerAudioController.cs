@@ -17,9 +17,9 @@ public class PlayerAudioController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-	rb = GetComponent<Rigidbody2D>();
+	    rb = GetComponent<Rigidbody2D>();
 	// get the references to your audio sources here !  
-    sonidosZorro = GetComponents<AudioSource>();  
+        sonidosZorro = GetComponents<AudioSource>();  
     }
 
     // FixedUpdate is called whenever the physics engine updates
@@ -68,7 +68,7 @@ public class PlayerAudioController : MonoBehaviour
         }
         sonidosZorro[2].Play();
 	// to keep things cleaner, you might want to
-	// play this sound only when the fox actually jumoed ...
+	// play this sound only when the fox actually jumoed ... (I want to play the sound when the fox drops without jumping too)
     }
 
     // trigger your crouching sound here
