@@ -30,7 +30,7 @@ public class PlayerAudioController : MonoBehaviour
 	// Make sure to trigger the movement sound only when
 	// the movement begins ...
        Debug.Log(rb.velocity.magnitude);
-        if (isRunning == false && rb.velocity.magnitude > 1 && !isJumping) 
+        if (isRunning == false && rb.velocity.magnitude > 1 && isJumping == false) 
         {
             print("The Object is Moving");
             sonidosZorro[0].Play();
@@ -59,6 +59,7 @@ public class PlayerAudioController : MonoBehaviour
     public void OnLanding() 
     {
         isJumping = false;
+        isRunning = false;
         print("the fox has landed");
         int randomSound = Random.Range(0, 50);
         sonidosZorro[2].pitch = initialPitch;
