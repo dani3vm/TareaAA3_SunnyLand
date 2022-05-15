@@ -7,7 +7,6 @@ public class PlayerAudioController : MonoBehaviour
     // keep track of the jumping state ... 
     bool isJumping = false;
     bool isRunning = false;
-    bool isPlaying = false;
     float initialPitch = 1.0f; 
 
     // make sure to keep track of the movement as well !
@@ -31,11 +30,14 @@ public class PlayerAudioController : MonoBehaviour
 	// Make sure to trigger the movement sound only when
 	// the movement begins ...
        Debug.Log(rb.velocity.magnitude);
-        if (isRunning == false && rb.velocity.magnitude > 1 && !isJumping) {
+        if (isRunning == false && rb.velocity.magnitude > 1 && !isJumping) 
+        {
             print("The Object is Moving");
             sonidosZorro[0].Play();
             isRunning = true;
-        } else if (isRunning == true && rb.velocity.magnitude < 1) {
+        } 
+        else if (isRunning == true && rb.velocity.magnitude < 1) 
+        {
             print("The Object is not Moving");
             sonidosZorro[0].Stop();
             isRunning = false;
@@ -94,7 +96,8 @@ public class PlayerAudioController : MonoBehaviour
     }
 
     // trigger your cherry collection sound here !
-    public void OnCherryCollect() {
+    public void OnCherryCollect() 
+    {
         print("the fox has collected a cherry");
         sonidosZorro[4].Play();
     }
