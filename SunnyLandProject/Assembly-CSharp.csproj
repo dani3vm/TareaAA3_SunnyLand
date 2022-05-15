@@ -48,8 +48,10 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\TriggerCollection.cs" />
+     <Compile Include="Assets\BoxAudioController.cs" />
      <Compile Include="Assets\Scripts\PlayerAudioController.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+     <Compile Include="Assets\Scripts\BoxAudioController.cs" />
      <Compile Include="Assets\Scripts\CharacterController2D.cs" />
  <Reference Include="UnityEngine">
  <HintPath>/Applications/Unity/Hub/Editor/2020.3.28f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
@@ -274,16 +276,16 @@
  <HintPath>/Applications/Unity/Hub/Editor/2020.3.28f1/Unity.app/Contents/Managed/UnityEngine/UnityEditor.UnityConnectModule.dll</HintPath>
  </Reference>
  <Reference Include="Newtonsoft.Json">
- <HintPath>/Users/Alumne_1/Documents/GitHub/TareaAA3_SunnyLand/SunnyLandProject/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/Newtonsoft.Json.dll</HintPath>
+ <HintPath>/Users/danielventura/TareaAA3_SunnyLand/SunnyLandProject/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/Newtonsoft.Json.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.StandardEvents">
- <HintPath>/Users/Alumne_1/Documents/GitHub/TareaAA3_SunnyLand/SunnyLandProject/Library/PackageCache/com.unity.analytics@3.6.12/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
+ <HintPath>/Users/danielventura/TareaAA3_SunnyLand/SunnyLandProject/Library/PackageCache/com.unity.analytics@3.6.12/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.Editor">
- <HintPath>/Users/Alumne_1/Documents/GitHub/TareaAA3_SunnyLand/SunnyLandProject/Library/PackageCache/com.unity.analytics@3.6.12/Unity.Analytics.Editor.dll</HintPath>
+ <HintPath>/Users/danielventura/TareaAA3_SunnyLand/SunnyLandProject/Library/PackageCache/com.unity.analytics@3.6.12/Unity.Analytics.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.Tracker">
- <HintPath>/Users/Alumne_1/Documents/GitHub/TareaAA3_SunnyLand/SunnyLandProject/Library/PackageCache/com.unity.analytics@3.6.12/Unity.Analytics.Tracker.dll</HintPath>
+ <HintPath>/Users/danielventura/TareaAA3_SunnyLand/SunnyLandProject/Library/PackageCache/com.unity.analytics@3.6.12/Unity.Analytics.Tracker.dll</HintPath>
  </Reference>
  <Reference Include="netstandard">
  <HintPath>/Applications/Unity/Hub/Editor/2020.3.28f1/Unity.app/Contents/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
