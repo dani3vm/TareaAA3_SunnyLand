@@ -60,9 +60,9 @@ public class PlayerAudioController : MonoBehaviour
     {
         isJumping = false;
         print("the fox has landed");
-        int randomSound = Random.Range(0, 100);
+        int randomSound = Random.Range(0, 50);
         sonidosZorro[2].pitch = initialPitch;
-        if (randomSound > 50) 
+        if (randomSound > 25) 
         {
             sonidosZorro[2].pitch = Random.Range(0.5f, 2.0f);
         }
@@ -86,9 +86,9 @@ public class PlayerAudioController : MonoBehaviour
     {
         isJumping = true;
         print("the fox has jumped");
-        int randomSound = Random.Range(0, 100);
+        int randomSound = Random.Range(0, 50);
         sonidosZorro[1].pitch = initialPitch;
-        if (randomSound > 50) 
+        if (randomSound > 25) 
         {
             sonidosZorro[1].pitch = Random.Range(0.5f, 2.5f);
         }
